@@ -5,19 +5,25 @@
 <head>
 <body>
  
- 	<h3>Select a Student:<h3><br>
- 	<select>
-	{% for student in students %}
-		<option value="{{student['snum']}}">{{{{student["snum"]}} student["fname"]}} {{student["lname"]}}</option>
-	{% endfor %}
-	</select>
+ 	<form action = "{{ url_for('submit_enroll') }}" method = "POST">
 
-	<h3>Select a Class:<h3><br>
- 	<select>
-	{% for class in classes %}
-		<option value="{{class['cnum']}}">{{{{class["cnum"]}} class["cname"]}} {{class["instructor"]}}</option>
-	{% endfor %}
-	</select>
+	 	<h3>Select a Student:</h3><br>
+	 	<select name = "student">
+		{% for student in students %}
+			<option value="{{student['snum']}}">{{{{student["snum"]}} student["fname"]}} {{student["lname"]}}</option>
+		{% endfor %}
+		</select>
+
+		<h3>Select a Class:<h3><br>
+	 	<select name = "class">
+		{% for class in classes %}
+			<option value="{{class['cnum']}}">{{{{class["cnum"]}} class["cname"]}} {{class["instructor"]}}</option>
+		{% endfor %}
+		</select>
+
+		<input type="submit" value="Submit">
+
+	</form>
 
 	<a href = "/">Go back to home page</a>
 
