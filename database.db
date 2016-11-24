@@ -1,0 +1,15 @@
+import sqlite3
+
+conn = sqlite3.connect('databsae.db')
+print "Opened database successfully";
+
+conn.execute('CREATE TABLE students (snum INTEGER AUTOINCREMENT, fname TEXT, lname TEXT, year TEXT)')
+print "Table created successfully";
+
+conn.execute('CREATE TABLE classes (cnum TEXT, cname TEXT, instructor TEXT)')
+print "Table created successfully";
+
+conn.execute('CREATE TABLE enrolled_students (snum INTEGER, cnum TEXT, FOREIGN KEY(snum) REFERENCES students(snum), FOREIGN KEY(cnum) REFERENCES classes(cnum))')
+print "Table created successfully";
+
+conn.close()

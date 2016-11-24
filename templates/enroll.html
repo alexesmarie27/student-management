@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enroll A Student</title>
+<head>
+<body>
+ 
+ 	<h3>Select a Student:<h3><br>
+ 	<select>
+	{% for student in students %}
+		<option value="{{student['snum']}}">{{{{student["snum"]}} student["fname"]}} {{student["lname"]}}</option>
+	{% endfor %}
+	</select>
+
+	<h3>Select a Class:<h3><br>
+ 	<select>
+	{% for class in classes %}
+		<option value="{{class['cnum']}}">{{{{class["cnum"]}} class["cname"]}} {{class["instructor"]}}</option>
+	{% endfor %}
+	</select>
+
+	<a href = "/">Go back to home page</a>
+
+</body>
+</html>

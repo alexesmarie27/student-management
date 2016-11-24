@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Enrolled Students</title>
+<head>
+<body>
+ 
+	<table border = 1>
+		<thead>
+			<td>Student First Name</td>
+			<td>Student Last Name</td>
+			<td>Class Number>/td<
+			<td>Class Name</td>
+			<td>Instructor</td>
+		</thead>
+
+		{% for row in rows %}
+			<tr>
+				<td>{{row["fname"]}}</td>
+				<td>{{row["lname"]}}</td>
+				<td>{{row["cnum"]}}</td>
+				<td> {{ row["cname"]}}</td>
+				<td>{{row['instructor']}}</td>	
+			</tr>
+		{% endfor %}
+	</table>
+
+	<a href = "/">Go back to home page</a>
+
+</body>
+</html>
