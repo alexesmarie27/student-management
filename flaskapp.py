@@ -59,13 +59,13 @@ def submit_add_student():
             con.commit()
             msg = "Record successfully added"
 
-   except:
-      con.rollback()
-      msg = "error in insert student"
+      except:
+         con.rollback()
+         msg = "error in insert student"
 
-   finally:
-      return render_template("home.html", msg = msg)
-      con.close()
+      finally:
+         return render_template("home.html", msg = msg)
+         con.close()
 
 
 @app.route('/submit/addClass', methods = ['POST', 'GET'])
@@ -82,13 +82,13 @@ def submit_add_class():
             con.commit()
             msg = "Record successfully added"
 
-   except:
-      con.rollback()
-      msg = "error in insert class"
+      except:
+         con.rollback()
+         msg = "error in insert class"
 
-   finally:
-      return render_template("home.html", msg = msg)
-      con.close()
+      finally:
+         return render_template("home.html", msg = msg)
+         con.close()
 
 
 @app.route('/submit/enroll', methods = ['POST', 'GET'])
@@ -104,13 +104,13 @@ def submit_enroll():
             con.commit()
             msg = "Record successfully added"
 
-   except:
-      con.rollback()
-      msg = "error in enroll student"
+      except:
+         con.rollback()
+         msg = "error in enroll student"
 
-   finally:
-      return render_template("viewEnrolled.html", msg = msg)
-      con.close()
+      finally:
+         return render_template("viewEnrolled.html", msg = msg)
+         con.close()
 
 
 if __name__ == '__main__':

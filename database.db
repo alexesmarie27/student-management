@@ -6,10 +6,16 @@ print "Opened database successfully";
 conn.execute('CREATE TABLE students (snum INTEGER AUTOINCREMENT, fname TEXT, lname TEXT, year TEXT)')
 print "Table created successfully";
 
+conn.execute('INSERT INTO students(fname, lname, year) VALUES ("Alexes", "Presswood", "Senior"))')
+
 conn.execute('CREATE TABLE classes (cnum TEXT, cname TEXT, instructor TEXT)')
 print "Table created successfully";
 
+conn.execute('INSERT INTO classes(cnum, cname, instructor) VALUES ("CS4830", "Advanced Web Design", "Jim Ries"))')
+
 conn.execute('CREATE TABLE enrolled_students (snum INTEGER, cnum TEXT, FOREIGN KEY(snum) REFERENCES students(snum), FOREIGN KEY(cnum) REFERENCES classes(cnum))')
 print "Table created successfully";
+
+conn.execute('INSERT INTO enrolled_students(snum, cnum) VALUES (1, "CS4830")')
 
 conn.close()

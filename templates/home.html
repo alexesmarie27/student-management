@@ -5,10 +5,10 @@
 <head>
 <body>
 
-	<button type="button" onclick="{{ url_for("enrolled") }}">View Enrolled Students</button>
-	<button type="button" onclick="{{ url_for("view_add_student") }}">Add Student</button>
-	<button type="button" onclick="{{ url_for("view_add_class") }}">Add Class</button>
-	<button type="button" onclick="{{ url_for("view_enroll") }}">Enroll A Student</button>
+	<a href="{{ url_for('enrolled') }}">click me</a><br>
+	<a href="{{ url_for('view_add_student') }}">click me</a><br>
+	<a href="{{ url_for('view_add_class') }}">click me</a><br>
+	<a href="{{ url_for('view_enroll') }}">click me</a><br>
  
 </body>
 </html>
