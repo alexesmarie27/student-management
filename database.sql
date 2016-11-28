@@ -1,3 +1,6 @@
+/*
+	Creates a table to hold all the created students
+*/
 CREATE TABLE students (
 	snum INTEGER AUTO_INCREMENT, 
 	fname VARCHAR(30), 
@@ -8,6 +11,9 @@ CREATE TABLE students (
 
 INSERT INTO students (fname, lname, year) VALUES ("Alexes", "Presswood", "Senior");
 
+/*
+	Creates a table to hold all the created classes
+*/
 CREATE TABLE classes (
 	cnum VARCHAR(10), 
 	cname VARCHAR(50),
@@ -17,6 +23,9 @@ CREATE TABLE classes (
 
 INSERT INTO classes (cnum, cname, instructor) VALUES ("CS1000", "Intro to CS", "Michael Jurzcyk");
 
+/*
+	Creates a table to hold all the student/class pairs
+*/
 CREATE TABLE enrolled_students (
 	snum INTEGER, 
 	cnum VARCHAR(10), 

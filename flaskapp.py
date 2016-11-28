@@ -5,19 +5,23 @@ import itertools
 app = Flask(__name__)
 con = MySQLdb.connect("hackweek.cknowok54my8.us-west-2.rds.amazonaws.com", "ampwd6", "password", "hackweek")
 
+# directs the user to the homepage
 @app.route('/')
 def home():
    return render_template('home.html')
 
+#directs the user to the addStudent webpage
 @app.route('/view/addStudent')
 def view_add_student():
    return render_template('addStudent.html')
 
-
+# directs the user to the addClass webpage
 @app.route('/view/addClass')
 def view_add_class():
    return render_template('addClass.html')
 
+# queries the database for all students and classes, then redirects the user
+# to the enroll webpage
 @app.route('/view/enroll')
 def view_enroll():
    cur = con.cursor()
@@ -29,7 +33,7 @@ def view_enroll():
 
    return render_template('enroll.html', students = students, classes = classes)
 
-
+# queries the database for all enrollment information, then redirects the user to the viewEnrolled webpage
 @app.route('/enrollment')
 def enrolled():
    cur = con.cursor()
@@ -38,7 +42,7 @@ def enrolled():
     
    return render_template('viewEnrolled.html', rows = rows)
 
-
+# adds a user into the database
 @app.route('/submit/addStudent', methods = ['POST', 'GET'])
 def submit_add_student():
    if request.method == 'POST':
@@ -57,7 +61,7 @@ def submit_add_student():
       finally:
          return home()
 
-
+# adds a class into the database
 @app.route('/submit/addClass', methods = ['POST', 'GET'])
 def submit_add_class():
    if request.method == 'POST':
@@ -76,7 +80,7 @@ def submit_add_class():
       finally:
          return home()
 
-
+# adds an enrollment into the database
 @app.route('/submit/enroll', methods = ['POST', 'GET'])
 def submit_enroll():
    if request.method == 'POST':
