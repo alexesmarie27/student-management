@@ -2,13 +2,20 @@
 <html>
 <head>
 	<title>Home</title>
+	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 	<link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
 <head>
 <body>
+	<div class="jumbotron">
+  		<div class="container">
+   			<h1>Welcome!</h1>
+			<h2>To use this site, add a student, add a class, see all currently enrolled students, or enroll a student yourself!</h2>
+  		</div>
+	</div>
+	<a href="{{ url_for('enrolled') }}">View Enrolled Students</a><br>
+	<a href="{{ url_for('view_add_student') }}">Add Student</a><br>
+	<a href="{{ url_for('view_add_class') }}">Add Class</a><br>
+	<a href="{{ url_for('view_enroll') }}">Enroll A Student</a><br>
 
-	<a href="{{ url_for('enrolled') }}">click me</a><br>
-	<a href="{{ url_for('view_add_student') }}">click me</a><br>
-	<a href="{{ url_for('view_add_class') }}">click me</a><br>
-	<a href="{{ url_for('view_enroll') }}">click me</a><br>
- 
 </body>
 </html>

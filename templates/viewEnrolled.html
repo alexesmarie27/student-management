@@ -2,28 +2,35 @@
 <html>
 <head>
 	<title>View Enrolled Students</title>
+	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
 <head>
 <body>
- 
-	<table border = 1>
+<div class="panel panel-default">
+  	<!-- Default panel contents -->
+  	<div class="panel-heading">Currently Enrolled Students</div>
+
+	<table class='table'  border = 1>
 		<thead>
-			<td>Student First Name</td>
-			<td>Student Last Name</td>
-			<td>Class Number>/td<
-			<td>Class Name</td>
-			<td>Instructor</td>
+			<td><b>Student First Name</b></td>
+			<td><b>Student Last Name</b></td>
+			<td><b>Class Number</b></td>
+			<td><b>Class Name</b></td>
+			<td><b>Instructor</b></td>
 		</thead>
 
 		{% for row in rows %}
-			<tr>
-				<td>{{row["fname"]}}</td>
-				<td>{{row["lname"]}}</td>
-				<td>{{row["cnum"]}}</td>
-				<td> {{ row["cname"]}}</td>
-				<td>{{row['instructor']}}</td>	
-			</tr>
+		<tr>
+			<td> {{ row[0] }} </td>
+			<td> {{ row[1] }} </td>
+			<td> {{ row[2] }} </td>
+			<td> {{ row[3] }} </td>
+			<td> {{ row[4] }} </td>
+		</tr>
 		{% endfor %}
+		
 	</table>
+	</div><br>
 
 	<a href = "/">Go back to home page</a>
 
